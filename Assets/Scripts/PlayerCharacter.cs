@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using Unity.VisualScripting.Dependencies.NCalc;
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public enum CharClass
@@ -17,7 +12,7 @@ public class PlayerCharacter : MonoBehaviour
 {
     public string charName;
     public CharClass charClass;
-    public int agility, presence, strength, toughness;
+    public int hp, agility, presence, strength, toughness, silver;
 
     // Start is called before the first frame update
     void Start()
@@ -38,9 +33,10 @@ public class PlayerCharacter : MonoBehaviour
         GenPre();
         GenStr();
         GenTgh();
+        GenHP();
+        GenSilver();
     }
 
-    [ContextMenu("Generate Agility")]
     public void GenAgi()
     {
         agility = 0;
@@ -64,7 +60,6 @@ public class PlayerCharacter : MonoBehaviour
         StatMod(agility, out agility);
     }
 
-    [ContextMenu("Generate Presence")]
     public void GenPre()
     {
         presence = 0;
@@ -83,12 +78,18 @@ public class PlayerCharacter : MonoBehaviour
 
                     presence -= 1;
             break;
+            case CharClass.EsotericHermit | CharClass.HereticalPriest:
+                for (int i = 1; i <= 3; ++i){
+                    this.GetComponent<DiceRoll>().Dice(6);
+                    presence += this.GetComponent<DiceRoll>().diceValue;}
+
+                    presence += 2;
+            break;
         }
 
         StatMod(presence, out presence);
     }
 
-    [ContextMenu("Generate Strength")]
     public void GenStr()
     {
         strength = 0;
@@ -107,12 +108,18 @@ public class PlayerCharacter : MonoBehaviour
 
                     strength += 2;
             break;
+            case CharClass.GutterbornScum | CharClass.EsotericHermit | CharClass.HereticalPriest | CharClass.OccultHerbmaster:
+                for (int i = 1; i <= 3; ++i){
+                    this.GetComponent<DiceRoll>().Dice(6);
+                    strength += this.GetComponent<DiceRoll>().diceValue;}
+
+                    strength -= 2;
+            break;
         }
 
         StatMod(strength, out strength);
     }
 
-    [ContextMenu("Generate Toughness")]
     public void GenTgh()
     {
         toughness = 0;
@@ -124,9 +131,62 @@ public class PlayerCharacter : MonoBehaviour
                     this.GetComponent<DiceRoll>().Dice(6);
                     toughness += this.GetComponent<DiceRoll>().diceValue;}
             break;
+            case CharClass.OccultHerbmaster:
+                for (int i = 1; i <= 3; ++i){
+                    this.GetComponent<DiceRoll>().Dice(6);
+                    toughness += this.GetComponent<DiceRoll>().diceValue;}
+
+                    toughness += 2;
+            break;
         }
 
         StatMod(toughness, out toughness);
+    }
+
+    public void GenHP()
+    {
+        hp = 0;
+
+        switch(charClass)
+        {
+            default:
+                this.GetComponent<DiceRoll>().Dice(8);
+                hp += this.GetComponent<DiceRoll>().diceValue + toughness; 
+            break;
+            case CharClass.FangedDeserter:
+                this.GetComponent<DiceRoll>().Dice(10);
+                hp += this.GetComponent<DiceRoll>().diceValue + toughness; 
+            break;
+            case CharClass.GutterbornScum | CharClass.WretchedRoyalty | CharClass.OccultHerbmaster:
+                this.GetComponent<DiceRoll>().Dice(6);
+                hp += this.GetComponent<DiceRoll>().diceValue + toughness; 
+            break;
+            case CharClass.EsotericHermit:
+                this.GetComponent<DiceRoll>().Dice(4);
+                hp += this.GetComponent<DiceRoll>().diceValue + toughness; 
+            break;
+        }
+
+        if (hp <= 0)
+        {
+            hp = 1;
+        }
+    }
+
+    public void GenSilver()
+    {
+        silver = 0;
+
+        switch(charClass)
+        {
+            default:
+                for (int i = 1; i <= 2; ++i){
+                    this.GetComponent<DiceRoll>().Dice(6);
+                    silver += this.GetComponent<DiceRoll>().diceValue;}
+
+                    silver = silver * 10;
+            break;
+        }
     }
 
     public void StatMod(int value, out int _value)
