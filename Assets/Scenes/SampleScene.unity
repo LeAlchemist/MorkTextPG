@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 1003093196}
   - component: {fileID: 1003093195}
   - component: {fileID: 1003093197}
+  - component: {fileID: 1003093198}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -372,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec63bf50f21ce714eb08c29982ee3ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diceValue: 3
+  diceValue: 5
 --- !u!4 &1003093196
 Transform:
   m_ObjectHideFlags: 0
@@ -406,6 +407,24 @@ MonoBehaviour:
   verse: 3
   verseText: And hunger shall come among you. You shall dig roots and pull children
     from the breast. The gaunt shall prey upon the gaunt.
+--- !u!114 &1003093198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003093194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218c092a34b424500b56c3df21fa4388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charName: 
+  charClass: 0
+  agility: 0
+  presence: -1
+  strength: 0
+  toughness: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
