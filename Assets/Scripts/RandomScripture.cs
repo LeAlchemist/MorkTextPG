@@ -28,9 +28,9 @@ public class RandomScripture : MonoBehaviour
     [ContextMenu("Random")]
     public void Random()
     {
-        this.GetComponent<DiceRoll>().D6();
+        this.GetComponent<DiceRoll>().Dice(6);
         book = this.GetComponent<DiceRoll>().diceValue;
-        this.GetComponent<DiceRoll>().D6();
+        this.GetComponent<DiceRoll>().Dice(6);
         verse = this.GetComponent<DiceRoll>().diceValue;
 
         //this is a test formatting of how itd look in text
