@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad3a31bc7deac54486929e9a9efdee2, type: 3}
+  m_Name: NamelessScriptures
+  m_EditorClassIdentifier: 
+  scriptures:
+  - title: Psalm 1
+    psalms:
+    - description: The City shall be made hollow. Of those who rest in hollowness,
+        they shall not be seen.
+    - description: And the earth shall shake and be riven. And from the cracks shall
+        rise a poisonous mist, and in ten days it will shroud the world.
+    - description: Of those who build mightily, stone by stone, so shall they fall,
+        stone by stone.
+    - description: And the depths of the underworld shall bring forth flying spectres
+        and crawling beasts. In their passing the worm grows fat, the vulture weary.
+    - description: Doubt is crowned. The loyal shall turn their blades on those who
+        silver gave.
+    - description: And blood-cough shall spread like fire across the wastelands of
+        the drought.
+  - title: Psalm 2
+    psalms:
+    - description: As at the beginning, so at the end, all manner of fly and wasp
+        shall fill the air.
+    - description: And the ground pale with maggots.
+    - description: 'And from the Spears: a frost. Born from Bergen Chrypt and covering
+        all.'
+    - description: And in ten days and one the writings of sorcerers will be made
+        pale as air.
+    - description: And glass shall become quartz.
+    - description: And SHE shall see HIM grow stronger. And SHE reveals herself and
+        all shall be slain.
+  - title: Psalm 3
+    psalms:
+    - description: At Graven-Tosk the soil shall grow warm and those who rest be
+        made to walk.
+    - description: In the heart of Sarkash fog and dusk shall breathe beneath the
+        waking trees. That which was hewed by man shall now hew in its turn.
+    - description: And hunger shall come among you. You shall dig roots and pull
+        children from the breast. The gaunt shall prey upon the gaunt.
+    - description: The great shall be made poor and the poor poorer still.
+    - description: Then shall come rain unending and the day shall be made night
+        by its coming.
+    - description: Brother shall slay Brother and Sister poison Sister.
+  - title: Psalm 4
+    psalms:
+    - description: For five days and five nights mothers flesh shall be the cloak
+        of demons.
+    - description: And for five days and five nights shall fathers weep.
+    - description: Look to the West. Forth comes fire, and a horde, and the Kingdoms
+        burn.
+    - description: The liar, Arkh shall make knots of the hearts of men, sundering
+        the strongest of bonds.
+    - description: Behold now the Endless Sea, where Leviathan causes waves to be
+        as mountains.
+    - description: And Leviathan shall come among you. Children winter-born and fated
+        to fall before snow, both shall it take.
+  - title: Psalm 5
+    psalms:
+    - description: The lake and brook shall blacken and the water become tar.
+    - description: The trees shall wither, shrivel and die.
+    - description: And birds shall fall dead from the sky.
+    - description: In one night all those not yet of seven years and seven days shall
+        pass. Born and unborn. And dawn shall give them life as eaters of men.
+    - description: The sky shall weep fire and a great stone shall plummet as a city
+        fallen from heaven. Its gift is Death and madness is its herald.
+    - description: And the last King and the last Queen shall wither to dust. Their
+        wretched courts are devoured by wolves.
+  - title: Psalm 6
+    psalms:
+    - description: You shall know the last day is come. The sun shall set and never
+        rise.
+    - description: And day shall be as night and night as day. You shall not sleep,
+        neither shall you wake.
+    - description: Anthelia shall have her will and drink all colour from the world.
+    - description: Those who walk on two legs shall be nameless as the beasts of
+        the field.
+    - description: The earth shall vein, bringing black serpents forth from within
+        the earth.
+    - description: And the unnamed enter the earth, passing through the Veil as it
+        is sundered by Daejmon, the left underling of Nechrubel.
+  - title: Psalm 7
+    psalms:
+    - description: "All praise Yetsabu-Nech, the underworld\u2019s nightmare, the\r\nblack
+        disk which stands before the sun! All praise Verhu, beaming\r\nwith delight!
+        All praise the fire which burns all! And the darkness\r\nshall swallow the
+        darkness."

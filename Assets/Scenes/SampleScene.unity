@@ -352,6 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1003093196}
   - component: {fileID: 1003093195}
+  - component: {fileID: 1003093197}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -371,6 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec63bf50f21ce714eb08c29982ee3ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diceValue: 3
 --- !u!4 &1003093196
 Transform:
   m_ObjectHideFlags: 0
@@ -386,6 +388,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1003093197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003093194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdeaf21d110d0e4c94b7f950f0b792f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scripture: {fileID: 11400000, guid: 6c170accc3f0d59479b4c2ff5be64d87, type: 2}
+  book: 3
+  bookText: Psalm 3
+  verse: 3
+  verseText: And hunger shall come among you. You shall dig roots and pull children
+    from the breast. The gaunt shall prey upon the gaunt.
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

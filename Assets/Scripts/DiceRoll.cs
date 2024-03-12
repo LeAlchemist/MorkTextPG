@@ -6,7 +6,7 @@ using UnityEngine;
 public class DiceRoll : MonoBehaviour
 {
     public int diceValue;
-    public int maxValue;
+    int maxValue;
 
     [ContextMenu("D2")]
     public void D2()
