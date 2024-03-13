@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 [ExecuteAlways]
 public class RandomScripture : MonoBehaviour
 {
-    public NamelessScriptures scripture;
+    NamelessScriptures scripture;
     public int book;
     public string bookText;
     public int verse;
@@ -21,6 +19,8 @@ public class RandomScripture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scripture = AssetDatabase.LoadAssetAtPath<NamelessScriptures>("Assets/ScriptableObjects/NamelessScriptures.asset");
+
         bookText = scripture.scriptures[book - 1].title;
         verseText = scripture.scriptures[book - 1].psalms[verse - 1].description;
     }
