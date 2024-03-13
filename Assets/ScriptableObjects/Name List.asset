@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bff9de8d07d41a47aa3819b13a4c460, type: 3}
+  m_Name: Name List
+  m_EditorClassIdentifier: 
+  names:
+  - name:
+    - Aerg-Tval
+    - Agn
+    - Arvant
+    - Belsum
+    - Belum
+    - Brint
+    - "B\xF6rda"
+    - Daeru
+  - name:
+    - Eldar
+    - Felban
+    - Gotven
+    - Graft
+    - Grin
+    - Grittr
+    - "Haer\xFC"
+    - Hargha
+  - name:
+    - Harmug
+    - Jotna
+    - Karg
+    - Karva
+    - Katla
+    - Keftar
+    - Klort
+    - Kratar
+  - name:
+    - Kutz
+    - Kvetin
+    - Lygan
+    - Margar
+    - Merkari
+    - Nagl
+    - Niduk
+    - Nifehl
+  - name:
+    - "Pr\xFCgl"
+    - Qillnach
+    - Risten
+    - Svind
+    - Theras
+    - Therg
+    - Torvul
+    - "T\xF6rn"
+  - name:
+    - Urm
+    - Urvarg
+    - Vagal
+    - Vatan
+    - Von
+    - Vrakh
+    - Vresi
+    - Wemut

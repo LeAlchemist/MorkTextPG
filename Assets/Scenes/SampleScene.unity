@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 1003093197}
   - component: {fileID: 1003093198}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: 'GameObjectHargha Risten '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec63bf50f21ce714eb08c29982ee3ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diceValue: 5
+  diceValue: 1
 --- !u!4 &1003093196
 Transform:
   m_ObjectHideFlags: 0
@@ -402,11 +402,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scripture: {fileID: 11400000, guid: 6c170accc3f0d59479b4c2ff5be64d87, type: 2}
-  book: 3
-  bookText: Psalm 3
-  verse: 3
-  verseText: And hunger shall come among you. You shall dig roots and pull children
-    from the breast. The gaunt shall prey upon the gaunt.
+  book: 1
+  bookText: Psalm 1
+  verse: 5
+  verseText: Doubt is crowned. The loyal shall turn their blades on those who silver
+    gave.
 --- !u!114 &1003093198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,12 +419,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218c092a34b424500b56c3df21fa4388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: 
+  charName: 'Lygan '
+  nameList: {fileID: 11400000, guid: b304fd4f887d74d41b91d465dd4188d9, type: 2}
   charClass: 0
-  agility: 0
-  presence: -1
-  strength: 0
-  toughness: 1
+  hp: 7
+  omens: 2
+  agility: -2
+  presence: 0
+  strength: 2
+  toughness: -1
+  silver: 50
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

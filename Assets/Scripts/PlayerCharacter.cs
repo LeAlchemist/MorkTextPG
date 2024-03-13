@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum CharClass
@@ -11,30 +12,55 @@ public enum CharClass
 public class PlayerCharacter : MonoBehaviour
 {
     public string charName;
+    public NameList nameList;
     public CharClass charClass;
-    public int hp, agility, presence, strength, toughness, silver;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int hp, omens, agility, presence, strength, toughness, silver;
 
     [ContextMenu("Generate Character")]
     public void GenChar()
     {
+        GenName();
+        GenOmn();
         GenAgi();
         GenPre();
         GenStr();
         GenTgh();
         GenHP();
         GenSilver();
+    }
+
+    [ContextMenu("Name")]
+    public void GenName()
+    {
+        charName = null; 
+
+        this.GetComponent<DiceRoll>().Dice(3);
+        int value = this.GetComponent<DiceRoll>().diceValue;
+
+        for (int i = 1; i <= value; ++i){
+                    this.GetComponent<DiceRoll>().Dice(6);
+                    int val1 = this.GetComponent<DiceRoll>().diceValue;
+                    this.GetComponent<DiceRoll>().Dice(8);
+                    int val2 = this.GetComponent<DiceRoll>().diceValue;
+                    charName += nameList.names[val1-1].name[val2-1] + " ";
+                    }
+    }
+
+    public void GenOmn()
+    {
+        omens = 0;
+
+        switch (charClass)
+        {
+            default:
+                this.GetComponent<DiceRoll>().Dice(2);
+                omens = this.GetComponent<DiceRoll>().diceValue;
+            break;
+            case CharClass.EsotericHermit or CharClass.HereticalPriest:
+                this.GetComponent<DiceRoll>().Dice(4);
+                omens = this.GetComponent<DiceRoll>().diceValue;
+            break;
+        }
     }
 
     public void GenAgi()
@@ -78,7 +104,7 @@ public class PlayerCharacter : MonoBehaviour
 
                     presence -= 1;
             break;
-            case CharClass.EsotericHermit | CharClass.HereticalPriest:
+            case CharClass.EsotericHermit or CharClass.HereticalPriest:
                 for (int i = 1; i <= 3; ++i){
                     this.GetComponent<DiceRoll>().Dice(6);
                     presence += this.GetComponent<DiceRoll>().diceValue;}
@@ -108,7 +134,7 @@ public class PlayerCharacter : MonoBehaviour
 
                     strength += 2;
             break;
-            case CharClass.GutterbornScum | CharClass.EsotericHermit | CharClass.HereticalPriest | CharClass.OccultHerbmaster:
+            case CharClass.GutterbornScum or CharClass.EsotericHermit or CharClass.HereticalPriest or CharClass.OccultHerbmaster:
                 for (int i = 1; i <= 3; ++i){
                     this.GetComponent<DiceRoll>().Dice(6);
                     strength += this.GetComponent<DiceRoll>().diceValue;}
@@ -157,7 +183,7 @@ public class PlayerCharacter : MonoBehaviour
                 this.GetComponent<DiceRoll>().Dice(10);
                 hp += this.GetComponent<DiceRoll>().diceValue + toughness; 
             break;
-            case CharClass.GutterbornScum | CharClass.WretchedRoyalty | CharClass.OccultHerbmaster:
+            case CharClass.GutterbornScum or CharClass.WretchedRoyalty or CharClass.OccultHerbmaster:
                 this.GetComponent<DiceRoll>().Dice(6);
                 hp += this.GetComponent<DiceRoll>().diceValue + toughness; 
             break;
@@ -181,6 +207,24 @@ public class PlayerCharacter : MonoBehaviour
         {
             default:
                 for (int i = 1; i <= 2; ++i){
+                    this.GetComponent<DiceRoll>().Dice(6);
+                    silver += this.GetComponent<DiceRoll>().diceValue;}
+
+                    silver = silver * 10;
+            break;
+            case CharClass.GutterbornScum or CharClass.EsotericHermit:
+                this.GetComponent<DiceRoll>().Dice(6);
+                silver += this.GetComponent<DiceRoll>().diceValue* 10;
+            break;
+            case CharClass.WretchedRoyalty:
+                for (int i = 1; i <= 4; ++i){
+                    this.GetComponent<DiceRoll>().Dice(6);
+                    silver += this.GetComponent<DiceRoll>().diceValue;}
+
+                    silver = silver * 10;
+            break;
+            case CharClass.HereticalPriest:
+                for (int i = 1; i <= 3; ++i){
                     this.GetComponent<DiceRoll>().Dice(6);
                     silver += this.GetComponent<DiceRoll>().diceValue;}
 
