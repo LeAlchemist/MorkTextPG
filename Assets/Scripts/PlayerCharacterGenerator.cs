@@ -16,6 +16,7 @@ public class PlayerCharacterGenerator : MonoBehaviour
     NameList nameList;
     public CharClass charClass;
     public int hp, omens, agility, presence, strength, toughness, silver;
+    public Items[] weapons, armor;
 
     void Update()
     {
